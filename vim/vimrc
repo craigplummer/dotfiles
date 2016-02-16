@@ -1,10 +1,10 @@
 " General configuration
 set nocompatible              " Don't maintain compatibility with Vi 
-set tabstop=2                 " 
-set shiftwidth=2
-set expandtab
-set number
-set noswapfile
+set tabstop=2                 " Set tab size to 2
+set shiftwidth=2              " Set reindenting size to 2
+set expandtab                 " Use spaces instead of tabs
+set number                    " Display line numbers
+set noswapfile                " Stop creating temporary files
 set wildmenu
 filetype off                  " required
 
