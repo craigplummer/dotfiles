@@ -1,4 +1,11 @@
-set nocompatible              " be iMproved, required
+" General configuration
+set nocompatible              " Don't maintain compatibility with Vi 
+set tabstop=2                 " 
+set shiftwidth=2
+set expandtab
+set number
+set noswapfile
+set wildmenu
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -11,8 +18,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'johnallen3d/made-of-code.vim'
-Plugin 'ratazzi/blackboard.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
@@ -35,6 +40,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
+" Colour Scheme Settings
 set term=xterm
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
@@ -48,15 +55,8 @@ highlight ColorColumn guibg=Gray
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
-
-set noswapfile
-set wildmenu
 runtime macros/matchit.vim
 
-set nocompatible
 if has("autocmd")
  filetype indent plugin on
 endif
@@ -66,5 +66,32 @@ augroup rubypath
  autocmd FileType ruby setlocal suffixesadd+=.rb
 augroup END
 
-set tabstop=2 shiftwidth=2 expandtab 
-set number
+" Key Mappings
+nmap 0 ^
+nmap <C-s> <esc>:w<CR>
+" Navigate up and down through wrapped lines
+nmap j gj
+nmap k gk
+
+" Insert mappings
+imap jk <esc>
+imap kj <esc>
+imap <C-s> <esc>:w<CR>
+
+" Leader mappings
+let mapleader = "\<Space>"
+
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+" Edit your vimrc in a new tab
+nmap <leader>vi :tabedit ~/.vimrc<cr>
+" Pre-populate a split command with the current directory
+nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), ' ') . '/'<cr>
+" Edit the db/schema.rb Rails file in a split
+nmap <leader>sc :split db/schema.rb<cr>
+
+" Auto Commands
+autocmd Filetype help nnoremap <buffer> q :q<CR>
