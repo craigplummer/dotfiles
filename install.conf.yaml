@@ -11,6 +11,7 @@
     ~/.agignore: agignore
     ~/.zshrc: zshrc  
     ~/.gitignore: gitignore
-      
+    ~/.vim: vim
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
