@@ -51,3 +51,5 @@ git_prompt_info() {
 }
 setopt promptsubst
 PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
