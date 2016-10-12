@@ -11,10 +11,6 @@ PATH=".git/safe/../../bin:$PATH"
 
 export -U PATH
 
-# Oracle Instant Client
-export OCI_DIR=/opt/oracle/instantclient_11_2
-export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
-
 # History settings
 setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zhistory
