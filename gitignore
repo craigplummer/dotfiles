@@ -11,3 +11,6 @@ tmp/**/*
 !tmp/cache/.keep
 *.pyc
 .ruby-gemset
+.ruby-version
+jsconfig.json
+typings/
