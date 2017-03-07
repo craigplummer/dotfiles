@@ -49,7 +49,7 @@ setopt promptsubst
 PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:~/.node/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/node@6/bin"
 
 # Add yarn global to Path
-export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
