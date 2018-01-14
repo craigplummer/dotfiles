@@ -48,8 +48,13 @@ git_prompt_info() {
 setopt promptsubst
 PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/node@6/bin"
 
 # Add yarn global to Path
 export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+
+# Go config
+export GOPATH=$HOME/code/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
